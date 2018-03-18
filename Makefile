@@ -36,7 +36,7 @@ $(AUTOV8_DEPOT_TOOLS):
 	cd build; git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
 $(AUTOV8_DIR): $(AUTOV8_DEPOT_TOOLS)
-	cd build; fetch v8; cd v8; git checkout $(AUTOV8_VERSION); gclient sync; ./build/install-build-deps.sh; tools/dev/v8gen.py x64.release -- $(V8_OPTIONS)
+	cd build; fetch v8; cd v8; git checkout $(AUTOV8_VERSION); gclient sync; ./build/install-build-deps.sh --no-prompt; tools/dev/v8gen.py x64.release -- $(V8_OPTIONS)
 
 $(AUTOV8_OUT)/third_party/icu/common/icudtb.dat:
 
